@@ -8,6 +8,7 @@ packages = [{include = "age_calculator"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pyqt6 = "^6.7.0"
 
 
 [build-system]
