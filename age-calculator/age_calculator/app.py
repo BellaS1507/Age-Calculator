@@ -3,12 +3,10 @@ import sys
 
 from PyQt6.QtWidgets import (
     QApplication,
-    QComboBox,
     QDateEdit,
     QLabel,
     QMainWindow,
     QPushButton,
-    QSpinBox,
     QVBoxLayout,
     QWidget,
 )
@@ -19,20 +17,33 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Widgets App")
+        self.setWindowTitle("Age calculator")
+        self.setContentsMargins(12, 12, 12, 12)
+        self.resize(320, 240)
 
         layout = QVBoxLayout()
-        widgets = [
-            QComboBox,
-            QDateEdit,
-            QLabel,
-            QPushButton,
-            QSpinBox,
-        ]
+        title_label = QLabel("Age Calculator")
 
-        for w in widgets:
-            layout.addWidget(w())
+        #Date(Birthday) input
+        birth_layout = QVBoxLayout()
+        birth_label = QLabel("Birthday: ")
+        birth_box = QDateEdit()
+        birth_layout.addWidget(birth_label)
+        birth_layout.addWidget(birth_box)
+       
+        #Date(Given) input
+        given_layout = QVBoxLayout()
+        given_label = QLabel("Chosen date: ")
+        given_box = QDateEdit()
+        given_layout.addWidget(given_label)
+        given_layout.addWidget(given_box)
+        
 
+        #add widgets & layout to main layout
+        layout.addWidget(title_label)
+        layout.addLayout(birth_layout)
+        layout.addLayout(given_layout)
+    
         widget = QWidget()
         widget.setLayout(layout)
 
@@ -42,6 +53,7 @@ class MainWindow(QMainWindow):
 
 
 app = QApplication(sys.argv)
+app.setStyle("Windows")
 window = MainWindow()
 window.show()
 
