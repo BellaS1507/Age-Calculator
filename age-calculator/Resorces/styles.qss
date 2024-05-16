@@ -1,0 +1,16 @@
+QWidget {
+    background-color: #EEE5FF;
+    padding: 6px;
+}
+QPushButton {
+    background: #5E17EB;
+    font-size: 1.3em;
+    color: #EEE5FF;
+}
+QDateEdit {
+    
+    border-width: 5   px;
+}
+QLabel {
+    color: #8C52FF
+}
